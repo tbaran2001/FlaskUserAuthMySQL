@@ -1,0 +1,21 @@
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `age` int(11) NOT NULL,
+  `gender` enum('male','female','other') DEFAULT NULL,
+  `description` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+INSERT INTO `users` (`id`, `email`, `password`, `username`, `age`, `gender`, `description`) VALUES
+(1, 'janedoe@example.com', 'haslo123', 'Jane', 30, 'female', ''),
+(2, 'johndoe@example.com', 'haslo456', 'John', 35, 'male', ''),
+(3, 'alice@example.com', 'haslo789', 'Alice', 25, 'female', ''),
+(4, 'qwe@o2.pl', '123', 'qwe', 21, 'male', 'cawwxa');
+
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
